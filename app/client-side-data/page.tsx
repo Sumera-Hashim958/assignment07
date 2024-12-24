@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 
 
 interface StoreData {
@@ -32,7 +33,7 @@ const Page = () => {
         <div className="p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
       {data.map((product) => (
         <div key={product.id} className="bg-white shadow-md rounded-lg border p-4">
-          <img src={product.image} alt={product.title} className="w-full h-48 object-cover rounded-lg"/>
+          <Image src={product.image} alt={product.title} className="w-full h-48 object-cover rounded-lg"/>
           <h2 className="font-bold text-lg mt-2">{product.title}</h2>
           <p className="text-gray-600">{product.description}</p>
           <div className="flex justify-between items-center">

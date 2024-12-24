@@ -1,14 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 interface BookData {
   id: number;
   name: string;
-  author: string;
-  description: string;
-  price: number;
   type: string;
   available: boolean;
-  image: string;
 }
 
 const Page = async () => {
@@ -20,9 +16,6 @@ const Page = async () => {
         {parsedResponse.map((book) => (
         <div key={book.id} className="bg-white shadow-md rounded-lg border p-4">
             <h2 className="font-bold text-lg">{book.name}</h2>
-          <p className="text-gray-600">Author: {book.author}</p>
-          <p className="text-gray-600">Description: {book.description}</p>
-          <p className="text-gray-600">Price: ${book.price}</p>
           <p className="text-gray-600">Type: {book.type}</p>
           <p className={`mt-2 ${book.available ? "text-green-600" : "text-red-600"}`}>
             {book.available ? "Available" : "Not Available"}
